@@ -1,0 +1,24 @@
+# Laravel
+/backend-laravel/vendor/
+/backend-laravel/node_modules/
+/backend-laravel/.env
+/backend-laravel/storage/*.key
+
+# Vue
+/frontend-vue/node_modules/
+/frontend-vue/dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
