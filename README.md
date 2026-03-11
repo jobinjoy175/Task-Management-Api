@@ -18,12 +18,12 @@ MySQL database
 Git
 
 Setup Instructions
-1. Clone the repository
+1. Clone the repository   
 git clone https://github.com/jobinjoy175/Task-Management-Api.git
 cd Task-Management-Api
 
-2. Backend Setup (Laravel 12)
-cd backend-laravel/laravel
+2. Backend Setup (Laravel 12)   
+cd backend-laravel/laravel     
 composer install
 cp .env.example .env
 php artisan key:generate
