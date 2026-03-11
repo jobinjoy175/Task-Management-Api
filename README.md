@@ -24,9 +24,9 @@ cd Task-Management-Api
 
 2. Backend Setup (Laravel 12)   
 cd backend-laravel/laravel     
-composer install
-cp .env.example .env
-php artisan key:generate
+composer install        
+cp .env.example .env       
+php artisan key:generate     
 
 
 Edit .env file with your database credentials:
@@ -41,7 +41,7 @@ DB_PASSWORD=
 
 Run migrations and seed the database:
 
-php artisan migrate
+php artisan migrate   
 php artisan db:seed
 
 
@@ -53,9 +53,9 @@ php artisan serve
 Backend runs at: http://127.0.0.1:8000
 
 3. Frontend Setup (Vue 3)
-cd ../../frontend-vue
-npm install
-npm run dev
+cd ../../frontend-vue    
+npm install      
+npm run dev     
 
 
 Frontend runs at: http://localhost:5173
