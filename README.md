@@ -25,7 +25,7 @@ cd Task-Management-Api
 2. Backend Setup (Laravel 12)   
 cd backend-laravel/laravel     
 composer install        
-cp .env.example .env       
+copy .env.example .env       
 php artisan key:generate     
 
 
