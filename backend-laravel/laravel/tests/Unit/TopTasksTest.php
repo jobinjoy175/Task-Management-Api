@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class TopTasksTest extends TestCase
 {
-    
+    /** @test */
     public function it_prioritizes_overdue_tasks_first()
     {
         $tasks = [
@@ -52,7 +52,7 @@ class TopTasksTest extends TestCase
         $this->assertEquals(3, $top[2]['id']);
     }
 
-   
+    /** @test */
     public function it_respects_top_n_limit()
     {
         $tasks = [
@@ -67,7 +67,7 @@ class TopTasksTest extends TestCase
         $this->assertEquals(1, $top[0]['id']); // Overdue first
     }
 
-    
+    /** @test */
     public function it_handles_mixed_overdue_priority_and_project_importance()
     {
         $tasks = [

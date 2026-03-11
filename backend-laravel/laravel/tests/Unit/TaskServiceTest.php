@@ -22,14 +22,14 @@ class TaskServiceTest extends TestCase
         $this->service = new TaskService();
     }
 
-   
+    /** @test */
     public function it_sorts_tasks_by_overdue_first()
     {
         $user = User::factory()->create();
 
         $project = Project::factory()->create();
 
-       
+        // Overdue task (created 4 days ago)
         Task::factory()->create([
             'project_id' => $project->id,
             'assigned_to' => $user->id,
@@ -38,7 +38,7 @@ class TaskServiceTest extends TestCase
             'created_at' => now()->subDays(4),
         ]);
 
-        
+        // Not overdue task (created today)
         Task::factory()->create([
             'project_id' => $project->id,
             'assigned_to' => $user->id,
@@ -52,7 +52,7 @@ class TaskServiceTest extends TestCase
         $this->assertTrue($tasks->first()->created_at->lt(now()->subDays(3)));
     }
 
-   
+    /** @test */
     public function it_sorts_tasks_by_priority_when_not_overdue()
     {
         $user = User::factory()->create();
@@ -79,7 +79,7 @@ class TaskServiceTest extends TestCase
         $this->assertEquals(5, $tasks->first()->priority);
     }
 
-    
+    /** @test */
     public function it_sorts_today_tasks_by_project_importance()
     {
         $user = User::factory()->create();
@@ -106,6 +106,8 @@ class TaskServiceTest extends TestCase
         ]);
 
         $tasks = $this->service->getNextTasks($user);
+
+        // The first task today should belong to projA (more tasks = more important)
         $this->assertEquals($projA->id, $tasks->first()->project_id);
     }
 }
